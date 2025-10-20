@@ -49,6 +49,107 @@
     .badge {
       font-size: 0.85em;
     }
+
+    /* ESTILOS PARA JOGADORES INATIVOS */
+    .player-inactive {
+      background-color: #f8f9fa !important;
+      opacity: 0.8;
+    }
+
+    .player-inactive td {
+      color: #6c757d !important;
+      font-style: italic;
+    }
+
+    .player-name {
+      text-decoration: line-through;
+    }
+
+    .player-inactive .badge-secondary {
+      background-color: #6c757d !important;
+      color: white !important;
+    }
+
+    .player-inactive .badge-light {
+      background-color: #e9ecef !important;
+      color: #6c757d !important;
+    }
+
+    /* Destaque para os primeiros colocados ativos */
+    tr:not(.player-inactive).table-warning {
+      background: linear-gradient(45deg, #fff3cd, #ffeaa7) !important;
+    }
+
+    tr:not(.player-inactive).table-light {
+      background: linear-gradient(45deg, #f8f9fa, #e9ecef) !important;
+    }
+
+    tr:not(.player-inactive).table-info {
+      background: linear-gradient(45deg, #d1ecf1, #b8e6f1) !important;
+    }
+
+    /* Estilo para badges de nível */
+    .badge-light {
+      background-color: #e9ecef !important;
+      color: #495057 !important;
+      border: 1px solid #dee2e6;
+    }
+
+    /* ESTILOS PARA AS SETAS DE POSIÇÃO */
+    .position-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .position-number {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .position-change {
+      font-size: 0.9em;
+      font-weight: bold;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+
+    .position-change.up {
+      color: #28a745;
+      background-color: rgba(40, 167, 69, 0.1);
+      order: -1;
+    }
+
+    .position-change.down {
+      color: #dc3545;
+      background-color: rgba(220, 53, 69, 0.1);
+      order: -1;
+    }
+
+    .position-change.same {
+      color: #6c757d;
+      background-color: rgba(108, 117, 125, 0.1);
+      order: -1;
+    }
+
+    .position-change.new {
+      color: #17a2b8;
+      background-color: rgba(23, 162, 184, 0.1);
+      font-size: 0.8em;
+      order: -1;
+    }
+
+    /* Ajuste para as medalhas nas primeiras posições */
+    .position-container {
+      min-width: 80px;
+    }
+
+    /* Separador entre ativos e inativos */
+    .separator-row {
+      background-color: #343a40 !important;
+      color: white !important;
+    }
   </style>
 </head>
 <body>
@@ -92,7 +193,7 @@
     <table class="table table-striped table-hover">
       <thead class="thead-dark">
         <tr>
-          <th>Posição</th>
+          <th class="text-center">Posição</th>
           <th>Nome</th>
           <th>Pontos</th>
           <th>Gols</th>
@@ -105,908 +206,1461 @@
       </thead>
       <tbody>
         
-        <tr class="
-          table-warning
           
           
-          top-scorer
-          
-          
-        ">
-          <td>
-            🥇
+          <tr class="
             
-            1º
-          </td>
-          <td>
-            <strong>JONAS</strong>
-             ⚽
+            table-warning
             
             
-          </td>
-          <td><strong>736</strong></td>
-          <td class="fw-bold text-success">
-            117
-             👑
-          </td>
-          <td class="">
-            35
+            top-scorer
             
-          </td>
-          <td>75</td>
-          <td>32</td>
-          <td>65</td>
-          <td class="">
-            49.81
             
-          </td>
-        </tr>
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  🥇
+                  
+                  
+                  <span class="position-number">1º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>JONAS</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível D
+              </span>
+              
+                 ⚽
+                
+                
+              
+            </td>
+            <td><strong>736</strong></td>
+            <td class="fw-bold text-success">
+              117
+               👑
+            </td>
+            <td class="">
+              35
+              
+            </td>
+            <td>75</td>
+            <td>32</td>
+            <td>65</td>
+            <td class="">
+              49.81
+              
+            </td>
+          </tr>
         
-        <tr class="
-          
-          table-light
           
           
-          
-          
-        ">
-          <td>
-            🥈
+          <tr class="
             
-            2º
-          </td>
-          <td>
-            <strong>MARLON</strong>
+            
+            table-light
             
             
             
-          </td>
-          <td><strong>725</strong></td>
-          <td class="">
-            52
             
-          </td>
-          <td class="">
-            38
-            
-          </td>
-          <td>78</td>
-          <td>29</td>
-          <td>63</td>
-          <td class="">
-            51.57
-            
-          </td>
-        </tr>
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  🥈
+                  
+                  
+                  <span class="position-number">2º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>MARLON</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível E
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>725</strong></td>
+            <td class="">
+              52
+              
+            </td>
+            <td class="">
+              38
+              
+            </td>
+            <td>78</td>
+            <td>29</td>
+            <td>63</td>
+            <td class="">
+              51.57
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          table-info
-          
-          
-          
-        ">
-          <td>
-            🥉
-            
-            3º
-          </td>
-          <td>
-            <strong>PALMEIRAS</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>678</strong></td>
-          <td class="">
-            67
+            table-info
             
-          </td>
-          <td class="">
-            30
             
-          </td>
-          <td>70</td>
-          <td>32</td>
-          <td>68</td>
-          <td class="">
-            47.45
             
-          </td>
-        </tr>
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  🥉
+                  
+                  
+                  <span class="position-number">3º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>PALMEIRAS</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível D
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>678</strong></td>
+            <td class="">
+              67
+              
+            </td>
+            <td class="">
+              30
+              
+            </td>
+            <td>70</td>
+            <td>32</td>
+            <td>68</td>
+            <td class="">
+              47.45
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          best-aproveitamento
-        ">
-          <td>
-            
-            4º
-          </td>
-          <td>
-            <strong>SIDAO</strong>
+          <tr class="
             
             
-             📊
-          </td>
-          <td><strong>655</strong></td>
-          <td class="">
-            63
             
-          </td>
-          <td class="">
-            31
             
-          </td>
-          <td>77</td>
-          <td>28</td>
-          <td>51</td>
-          <td class="fw-bold text-primary">
-            55.34
-             👑
-          </td>
-        </tr>
+            
+            
+            best-aproveitamento
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">4º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>SIDAO</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível B
+              </span>
+              
+                
+                
+                 📊
+              
+            </td>
+            <td><strong>655</strong></td>
+            <td class="">
+              63
+              
+            </td>
+            <td class="">
+              31
+              
+            </td>
+            <td>77</td>
+            <td>28</td>
+            <td>51</td>
+            <td class="fw-bold text-primary">
+              55.34
+               👑
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            5º
-          </td>
-          <td>
-            <strong>NANTES</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>643</strong></td>
-          <td class="">
-            47
             
-          </td>
-          <td class="">
-            34
             
-          </td>
-          <td>70</td>
-          <td>35</td>
-          <td>57</td>
-          <td class="">
-            50.41
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">5º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>NANTES</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível C
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>643</strong></td>
+            <td class="">
+              47
+              
+            </td>
+            <td class="">
+              34
+              
+            </td>
+            <td>70</td>
+            <td>35</td>
+            <td>57</td>
+            <td class="">
+              50.41
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            6º
-          </td>
-          <td>
-            <strong>WESLEY</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>641</strong></td>
-          <td class="">
-            34
             
-          </td>
-          <td class="">
-            40
             
-          </td>
-          <td>63</td>
-          <td>29</td>
-          <td>64</td>
-          <td class="">
-            46.58
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">6º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>WESLEY</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível C
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>641</strong></td>
+            <td class="">
+              34
+              
+            </td>
+            <td class="">
+              40
+              
+            </td>
+            <td>63</td>
+            <td>29</td>
+            <td>64</td>
+            <td class="">
+              46.58
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            7º
-          </td>
-          <td>
-            <strong>GUI</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>632</strong></td>
-          <td class="">
-            74
             
-          </td>
-          <td class="">
-            14
             
-          </td>
-          <td>72</td>
-          <td>35</td>
-          <td>55</td>
-          <td class="">
-            51.65
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">7º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>GUI</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível B
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>632</strong></td>
+            <td class="">
+              74
+              
+            </td>
+            <td class="">
+              14
+              
+            </td>
+            <td>72</td>
+            <td>35</td>
+            <td>55</td>
+            <td class="">
+              51.65
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            8º
-          </td>
-          <td>
-            <strong>CARVALHO</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>614</strong></td>
-          <td class="">
-            40
             
-          </td>
-          <td class="">
-            25
             
-          </td>
-          <td>65</td>
-          <td>27</td>
-          <td>60</td>
-          <td class="">
-            48.68
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">8º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>CARVALHO</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível E
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>614</strong></td>
+            <td class="">
+              40
+              
+            </td>
+            <td class="">
+              25
+              
+            </td>
+            <td>65</td>
+            <td>27</td>
+            <td>60</td>
+            <td class="">
+              48.68
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            9º
-          </td>
-          <td>
-            <strong>RAPHA</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>610</strong></td>
-          <td class="">
-            106
             
-          </td>
-          <td class="">
-            42
             
-          </td>
-          <td>64</td>
-          <td>29</td>
-          <td>73</td>
-          <td class="">
-            44.38
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">9º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>RAPHA</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível B
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>610</strong></td>
+            <td class="">
+              106
+              
+            </td>
+            <td class="">
+              42
+              
+            </td>
+            <td>64</td>
+            <td>29</td>
+            <td>73</td>
+            <td class="">
+              44.38
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            10º
-          </td>
-          <td>
-            <strong>CHICO</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>608</strong></td>
-          <td class="">
-            109
             
-          </td>
-          <td class="">
-            45
             
-          </td>
-          <td>58</td>
-          <td>35</td>
-          <td>83</td>
-          <td class="">
-            39.58
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">10º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>CHICO</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível A
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>608</strong></td>
+            <td class="">
+              109
+              
+            </td>
+            <td class="">
+              45
+              
+            </td>
+            <td>58</td>
+            <td>35</td>
+            <td>83</td>
+            <td class="">
+              39.58
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            11º
-          </td>
-          <td>
-            <strong>MATHEUS</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>601</strong></td>
-          <td class="">
-            2
             
-          </td>
-          <td class="">
-            3
             
-          </td>
-          <td>65</td>
-          <td>27</td>
-          <td>56</td>
-          <td class="">
-            50.0
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">11º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>MATHEUS</strong>
+              </span>
+              
+                <span class="ml-1" title="Goleiro">🧤</span>
+              
+              <span class="badge badge-light ml-1">
+                Nível G
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>601</strong></td>
+            <td class="">
+              2
+              
+            </td>
+            <td class="">
+              3
+              
+            </td>
+            <td>65</td>
+            <td>27</td>
+            <td>56</td>
+            <td class="">
+              50.0
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            12º
-          </td>
-          <td>
-            <strong>DUZAO</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>596</strong></td>
-          <td class="">
-            19
             
-          </td>
-          <td class="">
-            30
             
-          </td>
-          <td>67</td>
-          <td>24</td>
-          <td>55</td>
-          <td class="">
-            51.37
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">12º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>DUZAO</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível D
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>596</strong></td>
+            <td class="">
+              19
+              
+            </td>
+            <td class="">
+              30
+              
+            </td>
+            <td>67</td>
+            <td>24</td>
+            <td>55</td>
+            <td class="">
+              51.37
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            13º
-          </td>
-          <td>
-            <strong>DODOY</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>523</strong></td>
-          <td class="">
-            71
             
-          </td>
-          <td class="">
-            27
             
-          </td>
-          <td>62</td>
-          <td>19</td>
-          <td>53</td>
-          <td class="">
-            51.0
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">13º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>DODOY</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível A
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>523</strong></td>
+            <td class="">
+              71
+              
+            </td>
+            <td class="">
+              27
+              
+            </td>
+            <td>62</td>
+            <td>19</td>
+            <td>53</td>
+            <td class="">
+              51.0
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          top-assister
-          
-        ">
-          <td>
+          <tr class="
             
-            14º
-          </td>
-          <td>
-            <strong>LIMA</strong>
             
-             🎯
             
-          </td>
-          <td><strong>520</strong></td>
-          <td class="">
-            59
             
-          </td>
-          <td class="fw-bold text-info">
-            65
-             👑
-          </td>
-          <td>50</td>
-          <td>31</td>
-          <td>59</td>
-          <td class="">
-            43.1
             
-          </td>
-        </tr>
+            top-assister
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">14º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>LIMA</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível A
+              </span>
+              
+                
+                 🎯
+                
+              
+            </td>
+            <td><strong>520</strong></td>
+            <td class="">
+              59
+              
+            </td>
+            <td class="fw-bold text-info">
+              65
+               👑
+            </td>
+            <td>50</td>
+            <td>31</td>
+            <td>59</td>
+            <td class="">
+              43.1
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            15º
-          </td>
-          <td>
-            <strong>LEO</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>518</strong></td>
-          <td class="">
-            33
             
-          </td>
-          <td class="">
-            10
             
-          </td>
-          <td>57</td>
-          <td>31</td>
-          <td>56</td>
-          <td class="">
-            46.76
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">15º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>LEO</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível E
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>518</strong></td>
+            <td class="">
+              33
+              
+            </td>
+            <td class="">
+              10
+              
+            </td>
+            <td>57</td>
+            <td>31</td>
+            <td>56</td>
+            <td class="">
+              46.76
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            16º
-          </td>
-          <td>
-            <strong>GIGA</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>442</strong></td>
-          <td class="">
-            77
             
-          </td>
-          <td class="">
-            25
             
-          </td>
-          <td>53</td>
-          <td>28</td>
-          <td>77</td>
-          <td class="">
-            39.45
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">16º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>GIGA</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível C
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>442</strong></td>
+            <td class="">
+              77
+              
+            </td>
+            <td class="">
+              25
+              
+            </td>
+            <td>53</td>
+            <td>28</td>
+            <td>77</td>
+            <td class="">
+              39.45
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            17º
-          </td>
-          <td>
-            <strong>ROBERTO</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>433</strong></td>
-          <td class="">
-            0
             
-          </td>
-          <td class="">
-            0
             
-          </td>
-          <td>40</td>
-          <td>26</td>
-          <td>50</td>
-          <td class="">
-            41.95
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">17º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>ROBERTO</strong>
+              </span>
+              
+                <span class="ml-1" title="Goleiro">🧤</span>
+              
+              <span class="badge badge-light ml-1">
+                Nível G
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>433</strong></td>
+            <td class="">
+              0
+              
+            </td>
+            <td class="">
+              0
+              
+            </td>
+            <td>40</td>
+            <td>26</td>
+            <td>50</td>
+            <td class="">
+              41.95
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            18º
-          </td>
-          <td>
-            <strong>DOUGLAS</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>402</strong></td>
-          <td class="">
-            21
             
-          </td>
-          <td class="">
-            18
             
-          </td>
-          <td>38</td>
-          <td>25</td>
-          <td>43</td>
-          <td class="">
-            43.71
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">18º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>PASTORE</strong>
+              </span>
+              
+                <span class="ml-1" title="Goleiro">🧤</span>
+              
+              <span class="badge badge-light ml-1">
+                Nível G
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>180</strong></td>
+            <td class="">
+              0
+              
+            </td>
+            <td class="">
+              0
+              
+            </td>
+            <td>19</td>
+            <td>8</td>
+            <td>15</td>
+            <td class="">
+              51.59
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            19º
-          </td>
-          <td>
-            <strong>FELIXO</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>263</strong></td>
-          <td class="">
-            34
             
-          </td>
-          <td class="">
-            8
             
-          </td>
-          <td>43</td>
-          <td>21</td>
-          <td>58</td>
-          <td class="">
-            40.98
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">19º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>LUIZ</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível A
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>171</strong></td>
+            <td class="">
+              20
+              
+            </td>
+            <td class="">
+              15
+              
+            </td>
+            <td>19</td>
+            <td>9</td>
+            <td>12</td>
+            <td class="">
+              55.0
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            20º
-          </td>
-          <td>
-            <strong>LUCAS</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>185</strong></td>
-          <td class="">
-            18
             
-          </td>
-          <td class="">
-            14
             
-          </td>
-          <td>23</td>
-          <td>11</td>
-          <td>22</td>
-          <td class="">
-            47.62
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">20º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>DANILO</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível D
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>36</strong></td>
+            <td class="">
+              2
+              
+            </td>
+            <td class="">
+              4
+              
+            </td>
+            <td>4</td>
+            <td>1</td>
+            <td>7</td>
+            <td class="">
+              36.11
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            21º
-          </td>
-          <td>
-            <strong>PASTORE</strong>
+          <tr class="
             
             
             
-          </td>
-          <td><strong>180</strong></td>
-          <td class="">
-            0
             
-          </td>
-          <td class="">
-            0
             
-          </td>
-          <td>19</td>
-          <td>8</td>
-          <td>15</td>
-          <td class="">
-            51.59
             
-          </td>
-        </tr>
+            
+          ">
+            <td class="text-center">
+              
+                <div class="position-container">
+                  
+                    
+                      <span class="position-change new" title="Novo no ranking">
+                        🆕
+                      </span>
+                    
+                  
+                  
+                  
+                  
+                  <span class="position-number">21º</span>
+                </div>
+              
+            </td>
+            <td>
+              <span class="">
+                <strong>DODOY JR.</strong>
+              </span>
+              
+              <span class="badge badge-light ml-1">
+                Nível C
+              </span>
+              
+                
+                
+                
+              
+            </td>
+            <td><strong>24</strong></td>
+            <td class="">
+              0
+              
+            </td>
+            <td class="">
+              0
+              
+            </td>
+            <td>0</td>
+            <td>1</td>
+            <td>3</td>
+            <td class="">
+              8.33
+              
+            </td>
+          </tr>
         
-        <tr class="
+          
+          <!-- Separador entre ativos e inativos -->
+          <tr class="separator-row">
+            <td colspan="9" class="text-center py-2">
+              <small><i class="fas fa-info-circle"></i> JOGADORES INATIVOS</small>
+            </td>
+          </tr>
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            22º
-          </td>
-          <td>
-            <strong>LUIZ</strong>
+          <tr class="
+            player-inactive
             
             
             
-          </td>
-          <td><strong>171</strong></td>
-          <td class="">
-            20
             
-          </td>
-          <td class="">
-            15
             
-          </td>
-          <td>19</td>
-          <td>9</td>
-          <td>12</td>
-          <td class="">
-            55.0
             
-          </td>
-        </tr>
+          ">
+            <td class="text-center">
+              
+                <span class="badge badge-secondary">22º</span>
+                <small class="text-muted d-block">(Inativo)</small>
+              
+            </td>
+            <td>
+              <span class="player-name">
+                <strong>DOUGLAS</strong>
+              </span>
+              
+              <span class="badge badge-secondary ml-1">
+                Nível D
+              </span>
+              
+            </td>
+            <td><strong>402</strong></td>
+            <td class="">
+              21
+              
+            </td>
+            <td class="">
+              18
+              
+            </td>
+            <td>38</td>
+            <td>25</td>
+            <td>43</td>
+            <td class="">
+              43.71
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            23º
-          </td>
-          <td>
-            <strong>DANILO</strong>
+          <tr class="
+            player-inactive
             
             
             
-          </td>
-          <td><strong>36</strong></td>
-          <td class="">
-            2
             
-          </td>
-          <td class="">
-            4
             
-          </td>
-          <td>4</td>
-          <td>1</td>
-          <td>7</td>
-          <td class="">
-            36.11
             
-          </td>
-        </tr>
+          ">
+            <td class="text-center">
+              
+                <span class="badge badge-secondary">23º</span>
+                <small class="text-muted d-block">(Inativo)</small>
+              
+            </td>
+            <td>
+              <span class="player-name">
+                <strong>FELIXO</strong>
+              </span>
+              
+              <span class="badge badge-secondary ml-1">
+                Nível E
+              </span>
+              
+            </td>
+            <td><strong>263</strong></td>
+            <td class="">
+              34
+              
+            </td>
+            <td class="">
+              8
+              
+            </td>
+            <td>43</td>
+            <td>21</td>
+            <td>58</td>
+            <td class="">
+              40.98
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            24º
-          </td>
-          <td>
-            <strong>DODOY JR.</strong>
+          <tr class="
+            player-inactive
             
             
             
-          </td>
-          <td><strong>24</strong></td>
-          <td class="">
-            0
             
-          </td>
-          <td class="">
-            0
             
-          </td>
-          <td>0</td>
-          <td>1</td>
-          <td>3</td>
-          <td class="">
-            8.33
             
-          </td>
-        </tr>
+          ">
+            <td class="text-center">
+              
+                <span class="badge badge-secondary">24º</span>
+                <small class="text-muted d-block">(Inativo)</small>
+              
+            </td>
+            <td>
+              <span class="player-name">
+                <strong>LUCAS</strong>
+              </span>
+              
+              <span class="badge badge-secondary ml-1">
+                Nível B
+              </span>
+              
+            </td>
+            <td><strong>185</strong></td>
+            <td class="">
+              18
+              
+            </td>
+            <td class="">
+              14
+              
+            </td>
+            <td>23</td>
+            <td>11</td>
+            <td>22</td>
+            <td class="">
+              47.62
+              
+            </td>
+          </tr>
         
-        <tr class="
           
           
-          
-          
-          
-          
-        ">
-          <td>
-            
-            25º
-          </td>
-          <td>
-            <strong>LELO</strong>
+          <tr class="
+            player-inactive
             
             
             
-          </td>
-          <td><strong>0</strong></td>
-          <td class="">
-            71
             
-          </td>
-          <td class="">
-            53
             
-          </td>
-          <td>70</td>
-          <td>27</td>
-          <td>61</td>
-          <td class="">
-            50.0
             
-          </td>
-        </tr>
+          ">
+            <td class="text-center">
+              
+                <span class="badge badge-secondary">25º</span>
+                <small class="text-muted d-block">(Inativo)</small>
+              
+            </td>
+            <td>
+              <span class="player-name">
+                <strong>LELO</strong>
+              </span>
+              
+              <span class="badge badge-secondary ml-1">
+                Nível B
+              </span>
+              
+            </td>
+            <td><strong>0</strong></td>
+            <td class="">
+              71
+              
+            </td>
+            <td class="">
+              53
+              
+            </td>
+            <td>70</td>
+            <td>27</td>
+            <td>61</td>
+            <td class="">
+              50.0
+              
+            </td>
+          </tr>
         
       </tbody>
     </table>
@@ -1271,14 +1925,34 @@
         </div>
       </div>
       <div class="row mt-2">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <span class="badge bg-success text-white">⚽ Artilheiro</span>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <span class="badge bg-info text-white">🎯 Líder Assistências</span>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <span class="badge bg-primary text-white">📊 Melhor Aproveitamento</span>
+        </div>
+        <div class="col-md-3">
+          <span class="badge bg-light text-dark">🧤 Goleiro</span>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-md-4">
+          <span class="badge bg-success text-white">↑ Subindo</span>
+        </div>
+        <div class="col-md-4">
+          <span class="badge bg-danger text-white">↓ Descendo</span>
+        </div>
+        <div class="col-md-4">
+          <span class="badge bg-secondary text-white">→ Estável</span>
+        </div>
+      </div>
+      <div class="row mt-2">
+        <div class="col-md-12">
+          <span class="badge bg-secondary text-white">👤 Jogador Inativo</span>
+          <small class="text-muted">- Aparece no final do ranking, mas mantém gols e assistências</small>
         </div>
       </div>
     </div>
@@ -1286,12 +1960,28 @@
 </div>
 
 <footer class="bg-dark text-light text-center py-3 mt-4">
-  © 2025 Segunda D'Lei - Atualizado em 14/10/2025
+  © 2026 Segunda D'Lei - Atualizado em 20/10/2025
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Adicionar tooltip para jogadores inativos
+    const inactivePlayers = document.querySelectorAll('.player-inactive');
+    inactivePlayers.forEach(player => {
+        player.title = 'Jogador Inativo - Mantém estatísticas históricas';
+    });
+    
+    // Adicionar tooltip para goleiros
+    const goalkeepers = document.querySelectorAll('span[title="Goleiro"]');
+    goalkeepers.forEach(gk => {
+        gk.style.cursor = 'help';
+    });
+});
+</script>
 
 </body>
 </html>

@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Última Semana - Segunda D'Lei</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      background-color: #f8f9fc;
+    }
+    
+    .container-fluid {
+      padding: 0 15px;
+    }
+    
+    .card {
+      border-radius: 10px;
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+      margin-bottom: 1.5rem;
+    }
+
+    .card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+    }
+
+    .sumula-content {
+      line-height: 1.6;
+      font-size: 1.1rem;
+      white-space: pre-line;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #4e73df;
+    }
+
+    .team-color-indicator {
+      width: 35px;
+      height: 35px;
+      font-size: 0.9rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bg-azul { background-color: #4e73df !important; }
+    .bg-amarelo { background-color: #f6c23e !important; }
+    .bg-vermelho { background-color: #e74a3b !important; }
+    .bg-preto { background-color: #5a5c69 !important; }
+
+    .team-match {
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 1.1rem;
+    }
+
+    .team-azul { background-color: #d1ecff; color: #004085; border-left: 4px solid #4e73df; }
+    .team-amarelo { background-color: #fff3cd; color: #856404; border-left: 4px solid #f6c23e; }
+    .team-vermelho { background-color: #f8d7da; color: #721c24; border-left: 4px solid #e74a3b; }
+    .team-preto { background-color: #d6d8d9; color: #1b1e21; border-left: 4px solid #5a5c69; }
+
+    .match-score {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .score {
+      font-size: 1.3rem;
+      min-width: 30px;
+    }
+
+    .team-row:hover,
+    .match-row:hover,
+    .player-row:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+      transform: translateY(-1px);
+      transition: all 0.2s ease;
+    }
+
+    .table-hover tbody tr:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    .badge-lg {
+      font-size: 0.9em;
+      padding: 0.5em 0.75em;
+    }
+
+    .bg-gradient-primary {
+      background: linear-gradient(135deg, #4e73df 0%, #224abe 100%) !important;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .container-fluid {
+        padding: 0 10px;
+      }
+      
+      .team-color-indicator {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+      }
+      
+      .table-responsive {
+        font-size: 0.85rem;
+      }
+      
+      .match-score {
+        flex-direction: column;
+        gap: 5px;
+      }
+      
+      .score {
+        font-size: 1.1rem;
+      }
+      
+      .card-body {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="static/images/logo.webp" alt="Logo" style="height: 40px;">
+        Segunda D'Lei
+      </a>
+    </div>
+  </nav>
+
+  <div class="container-fluid mt-4">
+    <!-- Header -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h1 class="h3 font-weight-bold text-dark mb-1">
+              <i class="fas fa-calendar-alt me-2 text-primary"></i>Detalhes da Semana
+            </h1>
+            <p class="text-muted mb-0">Análise completa dos resultados de 2025-10-13</p>
+          </div>
+          <div class="text-right">
+            <span class="badge badge-primary badge-lg p-2">3 Times</span>
+            <div class="text-muted small mt-1">2025-10-13</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botão voltar -->
+    <div class="row mb-4 justify-content-start">
+      <div class="col-auto">
+        <a href="index.html" class="btn btn-secondary">
+          <i class="fas fa-arrow-left me-2"></i> Voltar
+        </a>
+      </div>
+    </div>
+
+    <!-- Sumula da Semana -->
+    
+
+    <!-- Card de Estatísticas dos Times -->
+    <div class="row mb-4 justify-content-center">
+      <div class="col-12">
+        <div class="card shadow">
+          <div class="card-header bg-white py-3">
+            <h4 class="mb-0 font-weight-bold text-dark">
+              <i class="fas fa-chart-bar me-2 text-primary"></i>Estatísticas dos Times
+            </h4>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="bg-light">
+                  <tr>
+                    <th class="px-4 py-3 font-weight-bold text-dark border-0">
+                      <i class="fas fa-tshirt me-1"></i>Time
+                    </th>
+                    <th class="px-4 py-3 font-weight-bold text-dark border-0 text-center">
+                      <i class="fas fa-star me-1"></i>Pontos
+                    </th>
+                    <th class="px-4 py-3 font-weight-bold text-dark border-0 text-center">
+                      <i class="fas fa-trophy me-1"></i>Vitórias
+                    </th>
+                    <th class="px-4 py-3 font-weight-bold text-dark border-0 text-center">
+                      <i class="fas fa-handshake me-1"></i>Empates
+                    </th>
+                    <th class="px-4 py-3 font-weight-bold text-dark border-0 text-center">
+                      <i class="fas fa-times me-1"></i>Derrotas
+                    </th>
+                    <th class="px-4 py-3 font-weight-bold text-dark border-0 text-center">
+                      <i class="fas fa-futbol me-1"></i>Gols Pró
+                    </th>
+                    <th class="px-4 py-3 font-weight-bold text-dark border-0 text-center">
+                      <i class="fas fa-shield-alt me-1"></i>Gols Contra
+                    </th>
+                    <th class="px-4 py-3 font-weight-bold text-dark border-0 text-center">
+                      <i class="fas fa-calculator me-1"></i>Saldo
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  <tr class="team-row">
+                    <td class="px-4 py-3 border-0">
+                      <div class="d-flex align-items-center">
+                        <div class="team-color-indicator bg-amarelo text-white rounded-circle d-flex align-items-center justify-content-center me-3">
+                          <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div>
+                          <div class="font-weight-bold text-dark">Time Amarelo</div>
+                          <small class="text-muted">6 jogadores</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="font-weight-bold text-primary" style="font-size: 1.2rem;">20</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="badge badge-success font-weight-bold">2</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="badge badge-warning font-weight-bold">4</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="badge badge-danger font-weight-bold">0</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="font-weight-bold text-success">10</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="font-weight-bold text-danger">6</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="font-weight-bold text-success">
+                        4
+                      </span>
+                    </td>
+                  </tr>
+                  
+                  <tr class="team-row">
+                    <td class="px-4 py-3 border-0">
+                      <div class="d-flex align-items-center">
+                        <div class="team-color-indicator bg-azul text-white rounded-circle d-flex align-items-center justify-content-center me-3">
+                          <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div>
+                          <div class="font-weight-bold text-dark">Time Azul</div>
+                          <small class="text-muted">4 jogadores</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="font-weight-bold text-primary" style="font-size: 1.2rem;">16</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="badge badge-success font-weight-bold">1</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="badge badge-warning font-weight-bold">4</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="badge badge-danger font-weight-bold">1</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="font-weight-bold text-success">9</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="font-weight-bold text-danger">11</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="font-weight-bold text-danger">
+                        -2
+                      </span>
+                    </td>
+                  </tr>
+                  
+                  <tr class="team-row">
+                    <td class="px-4 py-3 border-0">
+                      <div class="d-flex align-items-center">
+                        <div class="team-color-indicator bg-vermelho text-white rounded-circle d-flex align-items-center justify-content-center me-3">
+                          <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div>
+                          <div class="font-weight-bold text-dark">Time Vermelho</div>
+                          <small class="text-muted">4 jogadores</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="font-weight-bold text-primary" style="font-size: 1.2rem;">12</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="badge badge-success font-weight-bold">0</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="badge badge-warning font-weight-bold">4</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="badge badge-danger font-weight-bold">2</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="font-weight-bold text-success">8</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="font-weight-bold text-danger">10</span>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <span class="font-weight-bold text-danger">
+                        -2
+                      </span>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partidas da Semana -->
+    <div class="row mb-4 justify-content-center">
+      <div class="col-12">
+        <div class="card shadow">
+          <div class="card-header bg-white py-3">
+            <h4 class="mb-0 font-weight-bold text-dark">
+              <i class="fas fa-futbol me-2 text-primary"></i>Partidas da Semana
+            </h4>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="bg-light">
+                  <tr>
+                    <th class="px-4 py-3 font-weight-bold text-dark border-0 text-center" width="40%">
+                      <i class="fas fa-home me-1"></i>Time Casa
+                    </th>
+                    <th class="px-4 py-3 font-weight-bold text-dark border-0 text-center" width="20%">
+                      <i class="fas fa-exchange-alt me-1"></i>Placar
+                    </th>
+                    <th class="px-4 py-3 font-weight-bold text-dark border-0 text-center" width="40%">
+                      <i class="fas fa-plane me-1"></i>Time Visitante
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  <tr class="match-row">
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-azul font-weight-bold">
+                        Azul
+                      </div>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="match-score">
+                        <span class="score font-weight-bold text-warning" style="font-size: 1.3rem;">
+                          1
+                        </span>
+                        <span class="mx-3 font-weight-bold text-muted" style="font-size: 1.1rem;">×</span>
+                        <span class="score font-weight-bold text-warning" style="font-size: 1.3rem;">
+                          1
+                        </span>
+                      </div>
+                      
+                      <div class="small text-warning font-weight-bold mt-1">EMPATE</div>
+                      
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-amarelo font-weight-bold">
+                        Amarelo
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr class="match-row">
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-azul font-weight-bold">
+                        Azul
+                      </div>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="match-score">
+                        <span class="score font-weight-bold text-warning" style="font-size: 1.3rem;">
+                          2
+                        </span>
+                        <span class="mx-3 font-weight-bold text-muted" style="font-size: 1.1rem;">×</span>
+                        <span class="score font-weight-bold text-warning" style="font-size: 1.3rem;">
+                          2
+                        </span>
+                      </div>
+                      
+                      <div class="small text-warning font-weight-bold mt-1">EMPATE</div>
+                      
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-vermelho font-weight-bold">
+                        Vermelho
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr class="match-row">
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-amarelo font-weight-bold">
+                        Amarelo
+                      </div>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="match-score">
+                        <span class="score font-weight-bold text-warning" style="font-size: 1.3rem;">
+                          0
+                        </span>
+                        <span class="mx-3 font-weight-bold text-muted" style="font-size: 1.1rem;">×</span>
+                        <span class="score font-weight-bold text-warning" style="font-size: 1.3rem;">
+                          0
+                        </span>
+                      </div>
+                      
+                      <div class="small text-warning font-weight-bold mt-1">EMPATE</div>
+                      
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-vermelho font-weight-bold">
+                        Vermelho
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr class="match-row">
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-amarelo font-weight-bold">
+                        Amarelo
+                      </div>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="match-score">
+                        <span class="score font-weight-bold text-warning" style="font-size: 1.3rem;">
+                          2
+                        </span>
+                        <span class="mx-3 font-weight-bold text-muted" style="font-size: 1.1rem;">×</span>
+                        <span class="score font-weight-bold text-warning" style="font-size: 1.3rem;">
+                          2
+                        </span>
+                      </div>
+                      
+                      <div class="small text-warning font-weight-bold mt-1">EMPATE</div>
+                      
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-azul font-weight-bold">
+                        Azul
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr class="match-row">
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-vermelho font-weight-bold">
+                        Vermelho
+                      </div>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="match-score">
+                        <span class="score font-weight-bold text-danger" style="font-size: 1.3rem;">
+                          1
+                        </span>
+                        <span class="mx-3 font-weight-bold text-muted" style="font-size: 1.1rem;">×</span>
+                        <span class="score font-weight-bold text-success" style="font-size: 1.3rem;">
+                          2
+                        </span>
+                      </div>
+                      
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-azul font-weight-bold">
+                        Azul
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr class="match-row">
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-vermelho font-weight-bold">
+                        Vermelho
+                      </div>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="match-score">
+                        <span class="score font-weight-bold text-warning" style="font-size: 1.3rem;">
+                          2
+                        </span>
+                        <span class="mx-3 font-weight-bold text-muted" style="font-size: 1.1rem;">×</span>
+                        <span class="score font-weight-bold text-warning" style="font-size: 1.3rem;">
+                          2
+                        </span>
+                      </div>
+                      
+                      <div class="small text-warning font-weight-bold mt-1">EMPATE</div>
+                      
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-amarelo font-weight-bold">
+                        Amarelo
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr class="match-row">
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-azul font-weight-bold">
+                        Azul
+                      </div>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="match-score">
+                        <span class="score font-weight-bold text-danger" style="font-size: 1.3rem;">
+                          0
+                        </span>
+                        <span class="mx-3 font-weight-bold text-muted" style="font-size: 1.1rem;">×</span>
+                        <span class="score font-weight-bold text-success" style="font-size: 1.3rem;">
+                          3
+                        </span>
+                      </div>
+                      
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-amarelo font-weight-bold">
+                        Amarelo
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr class="match-row">
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-vermelho font-weight-bold">
+                        Vermelho
+                      </div>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="match-score">
+                        <span class="score font-weight-bold text-warning" style="font-size: 1.3rem;">
+                          2
+                        </span>
+                        <span class="mx-3 font-weight-bold text-muted" style="font-size: 1.1rem;">×</span>
+                        <span class="score font-weight-bold text-warning" style="font-size: 1.3rem;">
+                          2
+                        </span>
+                      </div>
+                      
+                      <div class="small text-warning font-weight-bold mt-1">EMPATE</div>
+                      
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-azul font-weight-bold">
+                        Azul
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr class="match-row">
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-amarelo font-weight-bold">
+                        Amarelo
+                      </div>
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="match-score">
+                        <span class="score font-weight-bold text-success" style="font-size: 1.3rem;">
+                          2
+                        </span>
+                        <span class="mx-3 font-weight-bold text-muted" style="font-size: 1.1rem;">×</span>
+                        <span class="score font-weight-bold text-danger" style="font-size: 1.3rem;">
+                          1
+                        </span>
+                      </div>
+                      
+                    </td>
+                    <td class="px-4 py-3 border-0 text-center">
+                      <div class="team-match team-vermelho font-weight-bold">
+                        Vermelho
+                      </div>
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jogadores por Time -->
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="card shadow">
+          <div class="card-header bg-white py-3">
+            <h4 class="mb-0 font-weight-bold text-dark">
+              <i class="fas fa-users me-2 text-primary"></i>Jogadores por Time
+            </h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              
+              <div class="col-lg-6 mb-4">
+                <div class="card border-amarelo h-100">
+                  <div class="card-header bg-amarelo text-white py-3">
+                    <h5 class="mb-0 font-weight-bold">
+                      <i class="fas fa-tshirt me-2"></i>Time Amarelo
+                      <small class="float-right">6 jogadores</small>
+                    </h5>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table class="table table-sm table-hover mb-0">
+                        <thead class="bg-light">
+                          <tr>
+                            <th class="px-3 py-2 font-weight-bold text-dark">Jogador</th>
+                            <th class="px-3 py-2 font-weight-bold text-dark text-center">
+                              <i class="fas fa-futbol" title="Gols"></i>
+                            </th>
+                            <th class="px-3 py-2 font-weight-bold text-dark text-center">
+                              <i class="fas fa-handshake" title="Assistências"></i>
+                            </th>
+                            <th class="px-3 py-2 font-weight-bold text-dark text-center">
+                              <i class="fas fa-clock" title="Atraso"></i>
+                            </th>
+                            <th class="px-3 py-2 font-weight-bold text-dark text-center">
+                              <i class="fas fa-times" title="Falta"></i>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                          <tr class="player-row ">
+                            <td class="px-3 py-2">
+                              <div class="font-weight-medium text-dark">SIDAO</div>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-success font-weight-bold">1</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <i class="fas fa-clock text-warning" title="Atraso"></i>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                          </tr>
+                          
+                          <tr class="player-row ">
+                            <td class="px-3 py-2">
+                              <div class="font-weight-medium text-dark">NANTES</div>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-success font-weight-bold">1</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-info font-weight-bold">4</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                          </tr>
+                          
+                          <tr class="player-row ">
+                            <td class="px-3 py-2">
+                              <div class="font-weight-medium text-dark">JONAS</div>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-success font-weight-bold">5</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-info font-weight-bold">2</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                          </tr>
+                          
+                          <tr class="player-row ">
+                            <td class="px-3 py-2">
+                              <div class="font-weight-medium text-dark">PALMEIRAS</div>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-success font-weight-bold">4</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                          </tr>
+                          
+                          <tr class="player-row ">
+                            <td class="px-3 py-2">
+                              <div class="font-weight-medium text-dark">MARLON</div>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                          </tr>
+                          
+                          <tr class="player-row ">
+                            <td class="px-3 py-2">
+                              <div class="font-weight-medium text-dark">MATHEUS</div>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-lg-6 mb-4">
+                <div class="card border-azul h-100">
+                  <div class="card-header bg-azul text-white py-3">
+                    <h5 class="mb-0 font-weight-bold">
+                      <i class="fas fa-tshirt me-2"></i>Time Azul
+                      <small class="float-right">4 jogadores</small>
+                    </h5>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table class="table table-sm table-hover mb-0">
+                        <thead class="bg-light">
+                          <tr>
+                            <th class="px-3 py-2 font-weight-bold text-dark">Jogador</th>
+                            <th class="px-3 py-2 font-weight-bold text-dark text-center">
+                              <i class="fas fa-futbol" title="Gols"></i>
+                            </th>
+                            <th class="px-3 py-2 font-weight-bold text-dark text-center">
+                              <i class="fas fa-handshake" title="Assistências"></i>
+                            </th>
+                            <th class="px-3 py-2 font-weight-bold text-dark text-center">
+                              <i class="fas fa-clock" title="Atraso"></i>
+                            </th>
+                            <th class="px-3 py-2 font-weight-bold text-dark text-center">
+                              <i class="fas fa-times" title="Falta"></i>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                          <tr class="player-row ">
+                            <td class="px-3 py-2">
+                              <div class="font-weight-medium text-dark">LIMA</div>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-success font-weight-bold">3</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-info font-weight-bold">2</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                          </tr>
+                          
+                          <tr class="player-row ">
+                            <td class="px-3 py-2">
+                              <div class="font-weight-medium text-dark">RAPHA</div>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-success font-weight-bold">1</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                          </tr>
+                          
+                          <tr class="player-row ">
+                            <td class="px-3 py-2">
+                              <div class="font-weight-medium text-dark">WESLEY</div>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                          </tr>
+                          
+                          <tr class="player-row ">
+                            <td class="px-3 py-2">
+                              <div class="font-weight-medium text-dark">ROBERTO</div>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-lg-6 mb-4">
+                <div class="card border-vermelho h-100">
+                  <div class="card-header bg-vermelho text-white py-3">
+                    <h5 class="mb-0 font-weight-bold">
+                      <i class="fas fa-tshirt me-2"></i>Time Vermelho
+                      <small class="float-right">4 jogadores</small>
+                    </h5>
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table class="table table-sm table-hover mb-0">
+                        <thead class="bg-light">
+                          <tr>
+                            <th class="px-3 py-2 font-weight-bold text-dark">Jogador</th>
+                            <th class="px-3 py-2 font-weight-bold text-dark text-center">
+                              <i class="fas fa-futbol" title="Gols"></i>
+                            </th>
+                            <th class="px-3 py-2 font-weight-bold text-dark text-center">
+                              <i class="fas fa-handshake" title="Assistências"></i>
+                            </th>
+                            <th class="px-3 py-2 font-weight-bold text-dark text-center">
+                              <i class="fas fa-clock" title="Atraso"></i>
+                            </th>
+                            <th class="px-3 py-2 font-weight-bold text-dark text-center">
+                              <i class="fas fa-times" title="Falta"></i>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                          <tr class="player-row ">
+                            <td class="px-3 py-2">
+                              <div class="font-weight-medium text-dark">CHICO</div>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-success font-weight-bold">5</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-info font-weight-bold">3</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                          </tr>
+                          
+                          <tr class="player-row ">
+                            <td class="px-3 py-2">
+                              <div class="font-weight-medium text-dark">GUI</div>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-success font-weight-bold">1</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                          </tr>
+                          
+                          <tr class="player-row ">
+                            <td class="px-3 py-2">
+                              <div class="font-weight-medium text-dark">GIGA</div>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-success font-weight-bold">2</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-info font-weight-bold">1</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                          </tr>
+                          
+                          <tr class="player-row ">
+                            <td class="px-3 py-2">
+                              <div class="font-weight-medium text-dark">CARVALHO</div>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-success font-weight-bold">2</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="badge badge-info font-weight-bold">1</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                            <td class="px-3 py-2 text-center">
+                              
+                              <span class="text-muted">-</span>
+                              
+                            </td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-light text-center py-3 mt-4">
+    © 2026 Segunda D'Lei - Atualizado em 20/10/2025
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
