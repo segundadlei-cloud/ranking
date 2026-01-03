@@ -1,212 +1,186 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Segunda D'Lei - Ranking de Futebol</title>
-    <link rel="stylesheet" href="static/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* CONTADOR REGRESSIVO NO TOPO */
-        .countdown-container {
-            text-align: center;
-            margin: 2rem 0 3rem;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .countdown-title {
-            font-size: 1.5rem;
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            font-weight: bold;
-        }
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 0 auto;
-            max-width: 500px;
-        }
-        .countdown-item {
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            min-width: 80px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            border: 1px solid #e9ecef;
-        }
-        .countdown-value {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #0d6efd;
-            margin-bottom: 5px;
-        }
-        .countdown-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: #6c757d;
-            letter-spacing: 1px;
-        }
-        
-        /* LOGO GRANDE NO CENTRO COM ANIMAÇÃO */
-        .logo-container {
-            text-align: center;
-            margin: 2rem 0 3rem;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .logo-large {
-            max-width: 300px;
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 1.5rem;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.4);
-            }
-            50% {
-                transform: scale(1.05);
-                box-shadow: 0 0 0 15px rgba(13, 110, 253, 0);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
-            }
-        }
-        .message-box {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 5px solid #0d6efd;
-        }
-        .message-box h2 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-        .message-box p {
-            color: #6c757d;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 0;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 1.5rem;
-            color: #6c757d;
-            border-top: 1px solid #dee2e6;
-            background: #f8f9fa;
-        }
-        
-        /* RESPONSIVIDADE */
-        @media (max-width: 768px) {
-            .logo-large {
-                max-width: 200px;
-            }
-            .countdown {
-                gap: 10px;
-            }
-            .countdown-item {
-                min-width: 70px;
-                padding: 10px;
-            }
-            .countdown-value {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segunda D'Lei - Ranking de Futebol</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* ESTILOS ORIGINAIS DO TEMPLATE */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    
+    .container-fluid {
+      padding: 0 15px;
+    }
+    
+    /* CONTAINER CENTRALIZADO DOS CARDS */
+    .nav-cards-container {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    
+    .nav-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      width: 100%;
+    }
+    
+    .nav-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+      border: 1px solid #e9ecef;
+    }
+    
+    .nav-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+    
+    .nav-card h2 {
+      color: #2c3e50;
+      margin-top: 0;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+    
+    .nav-card p {
+      color: #6c757d;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+      font-size: 1.1rem;
+      border: none;
+    }
+    
+    .btn:hover {
+      background: linear-gradient(135deg, #0a58ca 0%, #084298 100%);
+      transform: scale(1.05);
+      color: white;
+      text-decoration: none;
+    }
+    
+    /* ESTILOS PADRÃO DO HEADER/FOOTER DO PLAYER STATS */
+    body {
+      background-color: #f8f9fc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .navbar-brand {
+      font-weight: bold;
+    }
+
+    .navbar-dark {
+      background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%) !important;
+    }
+
+    footer {
+      margin-top: 3rem;
+    }
+    
+    /* RESPONSIVIDADE */
+    @media (max-width: 768px) {
+      .nav-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+      
+      .nav-card {
+        padding: 20px;
+      }
+      
+      .nav-card h2 {
+        font-size: 1.5rem;
+      }
+      
+      .container-fluid {
+        padding: 0 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container mt-4">
-        <!-- CONTADOR REGRESSIVO NO TOPO -->
-        <div class="countdown-container">
-            <div class="countdown-title">Descubra o campeão da temporada 2025:</div>
-            <div class="countdown">
-                <div class="countdown-item">
-                    <div class="countdown-value" id="days">00</div>
-                    <div class="countdown-label">Dias</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value" id="hours">00</div>
-                    <div class="countdown-label">Horas</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value" id="minutes">00</div>
-                    <div class="countdown-label">Minutos</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value" id="seconds">00</div>
-                    <div class="countdown-label">Segundos</div>
-                </div>
-            </div>
-        </div>
-        <!-- LOGO GRANDE E MENSAGEM -->
-        <div class="logo-container">
-            <img src="static/images/logo.webp" alt="Logo Segunda D'Lei" class="logo-large">
-            <div class="message-box">
-                <h2>⚠️ Novembro às Cegas ⚠️</h2>
-                <p>Calmô, curioso! Durante o mês de novembro, o ranking será mantido em segredo. Vocês não tem ideia da reviravolta que está o Ranking agora! <b>Nada está definido!</b></p>
-                <p>Nos vemos na festa em <strong>06/12</strong> para descobrirmos juntos quem foi o grande campeão da temporada e celebrar todas as premiações!</p>
-                <p>E não se esqueçam.... <strong>NINGUÉM</strong> é maior que o <strong>Segunda D' Lei!</strong></p>
-            </div>
-        </div>
+  <!-- HEADER PADRÃO -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="static/images/logo.webp" alt="Logo" style="height: 40px;">
+        Segunda D'Lei
+      </a>
     </div>
-    <footer>
-        <div class="container">
-            <p>© 2025 Segunda D' Lei</p>
-        </div>
-    </footer>
+  </nav>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-    <script>
-        // Contador regressivo para 06/12/2025
-        function updateCountdown() {
-            const targetDate = new Date('December 6, 2025 14:00:00').getTime();
-            const now = new Date().getTime();
-            const timeLeft = targetDate - now;
-            
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
+  <!-- CONTEÚDO ORIGINAL -->
+  <div class="container-fluid py-4">
+    <!-- CONTAINER CENTRALIZADO -->
+    <div class="nav-cards-container">
+      <div class="nav-cards">
+        <!-- CARD RANKING -->
+        <div class="nav-card">
+          <h2>🏆 Ranking</h2>
+          <p>Classificação atualizada dos jogadores com pontuação, gols e assistências</p>
+          <a href="ranking.html" class="btn">Ver Ranking</a>
+        </div>
         
-        // Atualizar a cada segundo
-        setInterval(updateCountdown, 1000);
-        updateCountdown(); // Chamada inicial
-    </script>
+        <!-- CARD ESTATÍSTICAS -->
+        <div class="nav-card">
+          <h2>📊 Estatísticas</h2>
+          <p>Dados detalhados de todos os jogadores e estatísticas avançadas</p>
+          <a href="estatisticas.html" class="btn">Ver Estatísticas</a>
+        </div>
+        
+        <!-- CARD ÚLTIMA SEMANA -->
+        <div class="nav-card">
+          <h2>📅 Última Semana</h2>
+          <p>Detalhes completos da última rodada jogada com times, partidas e jogadores</p>
+          <a href="ultima_semana.html" class="btn">Ver Última Semana</a>
+        </div>
+        
+        <!-- NOVO CARD: HISTÓRICO GERAL -->
+        <div class="nav-card">
+          <h2>📜 Histórico Geral</h2>
+          <p>Histórico completo de todas as temporadas, campeões e estatísticas históricas</p>
+          <a href="historico.html" class="btn">Ver Histórico</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER PADRÃO -->
+  <footer class="bg-dark text-light text-center py-3 mt-4">
+    © 2026 Segunda D'Lei - Atualizado em 02/01/2026
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
